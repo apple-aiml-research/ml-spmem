@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "Please consider citing our paper if you find this work useful in your research."
+title: ml-spmem
+url: https://github.com/apple-aiml-research/ml-spmem
+authors:
+  - family-names: Joo
+    given-names: Donghyeon
+  - family-names: Hwang
+    given-names: Dongseong
+  - family-names: Kim
+    given-names: Minsoo
+  - family-names: Kim
+    given-names: Jang-Hyun
+  - family-names: Moon
+    given-names: Suhong
+  - family-names: Asgari
+    given-names: Bahar
+  - family-names: Chiu
+    given-names: Chung-Cheng
+  - family-names: Chen
+    given-names: Zhifeng
+preferred-citation:
+  type: article
+  title: "SpMem: Sparse Attention via Memory Tokens"
+  year: 2026
+  authors:
+    - family-names: Joo
+      given-names: Donghyeon
+    - family-names: Hwang
+      given-names: Dongseong
+    - family-names: Kim
+      given-names: Minsoo
+    - family-names: Kim
+      given-names: Jang-Hyun
+    - family-names: Moon
+      given-names: Suhong
+    - family-names: Asgari
+      given-names: Bahar
+    - family-names: Chiu
+      given-names: Chung-Cheng
+    - family-names: Chen
+      given-names: Zhifeng

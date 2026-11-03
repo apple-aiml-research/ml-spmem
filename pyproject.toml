@@ -1,0 +1,61 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "spmem"
+version = "0.0.1"
+description = "SpMem: sparse attention via memory tokens, and Tapered Window Attention, for AXLearn."
+readme = "README.md"
+requires-python = "==3.12.*"
+license = { file = "LICENSE" }
+
+# No version pins: uv.lock records the resolved versions; refresh it with `uv lock --upgrade`.
+# The libraries `axlearn.common` imports are listed directly, since `axlearn[core]` pins a
+# TensorFlow build that is not on PyPI.
+dependencies = [
+    "absl-py",
+    "aqtp",
+    "axlearn",
+    "chex",
+    "jax",
+    "msgpack",
+    "numpy",
+    "optax",
+    "portpicker",
+    "tensorflow",
+    "tensorstore",
+    "typing-extensions",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-xdist",
+    "ruff",
+]
+
+[[tool.uv.index]]
+url = "https://pypi.org/simple"
+default = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["spmem", "twa"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.uv.sources]
+axlearn = { git = "https://github.com/apple/axlearn.git", branch = "main" }
+
+[tool.pytest.ini_options]
+python_files = ["*_test.py"]
+addopts = "-rs -p no:warnings"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+lint.select = ["F4", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
